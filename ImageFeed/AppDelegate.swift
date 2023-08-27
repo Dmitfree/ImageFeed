@@ -1,9 +1,4 @@
-//
-//  AppDelegate.swift
-//  ImageFeed
-//
 //  Created by Dmitfre on 27.08.2023.
-//
 
 import UIKit
 
@@ -13,7 +8,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        sleep(2)
         return true
     }
 
