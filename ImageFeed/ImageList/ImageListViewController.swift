@@ -6,6 +6,13 @@ class ImageListViewController: UIViewController {
     
     @IBOutlet private var tableView: UITableView!
     
+    private lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .none
+        return formatter
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,8 +38,16 @@ extension ImageListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: ImagesListCell.reuseIdentifier, for: indexPath)
+        
+        guard let imageListCell = cell as? ImagesListCell else {
+            return UITableViewCell()
+        }
+        configCell(for: imageListCell)
+        return imageListCell
     }
     
-    
+    func configCell(for cell: ImagesListCell) {
+        
+    }
 }
