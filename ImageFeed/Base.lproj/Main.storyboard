@@ -63,6 +63,11 @@
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="i78-tK-jpg" secondAttribute="trailing" id="t8l-c2-i89"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellImage" destination="WMK-s1-mbH" id="dck-fZ-xWS"/>
+                                            <outlet property="dateLabel" destination="i78-tK-jpg" id="9Mg-a0-tMK"/>
+                                            <outlet property="likeButton" destination="xnx-Wl-eI7" id="haP-Cj-9ZB"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
