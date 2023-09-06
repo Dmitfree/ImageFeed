@@ -18,17 +18,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vector" translatesAutoresizingMaskIntoConstraints="NO" id="N2i-Bu-7XR">
-                                <rect key="frame" x="159" y="387" width="75" height="78"/>
+                                <rect key="frame" x="159" y="387" width="75" height="77.666666666666657"/>
                                 <color key="backgroundColor" name="YP Black"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="YP Black"/>
                         <constraints>
-                            <constraint firstItem="N2i-Bu-7XR" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="159" id="5A2-QW-h43"/>
-                            <constraint firstItem="N2i-Bu-7XR" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="387" id="Mfd-ZA-1UH"/>
-                            <constraint firstAttribute="bottom" secondItem="N2i-Bu-7XR" secondAttribute="bottom" constant="387" id="Z0b-BN-mdJ"/>
-                            <constraint firstAttribute="trailing" secondItem="N2i-Bu-7XR" secondAttribute="trailing" constant="159" id="nRe-ED-CDI"/>
+                            <constraint firstItem="N2i-Bu-7XR" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Uuj-Kh-3xb"/>
+                            <constraint firstItem="N2i-Bu-7XR" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="cML-rK-7Xq"/>
                         </constraints>
                     </view>
                 </viewController>
