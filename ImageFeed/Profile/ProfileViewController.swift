@@ -8,11 +8,10 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userNickNameLabel: UILabel!
     @IBOutlet weak var userDescriptionLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-    
     @IBAction func userProfileExitButton(_ sender: Any) {
     }
 }
