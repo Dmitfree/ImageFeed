@@ -3,30 +3,33 @@
 import UIKit
 
 final class SingleImageViewController: UIViewController {
-    
-    @IBOutlet var imageView: UIImageView!
-    @IBOutlet var backwardButton: UIButton!
-    @IBOutlet weak var scrollView: UIScrollView!
-    
     var image: UIImage! {
         didSet {
             guard isViewLoaded else { return }
             imageView.image = image
-            rescaleAndCenterImageInScrollView()
+            rescaleAndCenterImageInScrollView(image: image)
         }
     }
     
+    @IBOutlet private var imageView: UIImageView!
+    @IBOutlet var backwardButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.image = image
         scrollView.minimumZoomScale = 0.1
         scrollView.maximumZoomScale = 1.25
-        rescaleAndCenterImageInScrollView()
+        imageView.image = image
+        rescaleAndCenterImageInScrollView(image: image)
     }
     
-    private func rescaleAndCenterImageInScrollView() {
-        guard let image = imageView.image else {return}
+    func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+        UIView.animate(withDuration: 0.1) {
+            self.rescaleAndCenterImageInScrollView(image: self.image)
+        }
+    }
         
+    private func rescaleAndCenterImageInScrollView(image: UIImage) {
         let minZoomScale = scrollView.minimumZoomScale
         let maxZoomScale = scrollView.maximumZoomScale
         view.layoutIfNeeded()
@@ -48,11 +51,9 @@ final class SingleImageViewController: UIViewController {
     }
     
     @IBAction func didTapShareButton(_ sender: Any) {
-        let share = UIActivityViewController(
-            activityItems: [image as Any],
-            applicationActivities: nil
-        )
-        present(share, animated: true, completion: nil)
+        let items:[Any] = [UIImage()]
+        let share = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        self.present(share, animated: true, completion: nil)
     }
 }
 

@@ -2,7 +2,7 @@
 
 import UIKit
 
-class ImageListViewController: UIViewController {
+final class ImageListViewController: UIViewController {
     
     @IBOutlet private var tableView: UITableView!
     
@@ -26,17 +26,19 @@ class ImageListViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowSingleImageSegueIdentifier" {
-            let viewController = segue.destination as! SingleImageViewController
-            let indexPath = sender as! IndexPath
-            let image = UIImage(named: photosName[indexPath.row])
-            _ = viewController.view // CRASH FIXED !?
-            viewController.imageView.image = image
-        } else {
-            super.prepare(for: segue, sender: sender)
+            if segue.identifier == ShowSingleImageSegueIdentifier {
+                let viewController = segue.destination as! SingleImageViewController
+                let indexPath = sender as! IndexPath
+                let image = UIImage(named: photosName[indexPath.row])
+               // _ = viewController.view
+                viewController.image = image
+            } else {
+                super.prepare(for: segue, sender: sender)
         }
     }
 }
+
+// MARK: - UITableViewDataSource
 
 extension ImageListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,6 +54,7 @@ extension ImageListViewController: UITableViewDataSource {
         configCell(for: imageListCell, with: indexPath)
         return imageListCell
     }
+
     
     private func configCell(for cell: ImagesListCell, with indexPath: IndexPath) {
         guard let image = UIImage(named: photosName[indexPath.row]) else {
@@ -63,12 +66,16 @@ extension ImageListViewController: UITableViewDataSource {
         let isLiked = indexPath.row % 2 == 0
         let likeImage = isLiked ? UIImage(named: "Like_Button_Active") : UIImage(named: "Like_Button_No_Active")
         cell.likeButton.setImage(likeImage, for: .normal)
+        
+       // cell.configureGradient()
     }
 }
 
+// MARK: - UITableViewDelegate
+
 extension ImageListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "ShowSingleImageSegueIdentifier", sender: indexPath)
+        performSegue(withIdentifier: ShowSingleImageSegueIdentifier, sender: indexPath)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
