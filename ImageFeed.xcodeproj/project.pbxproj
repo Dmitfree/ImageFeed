@@ -18,6 +18,7 @@
 		845DACA72A9FC813000688D8 /* ImagesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845DACA62A9FC813000688D8 /* ImagesListCell.swift */; };
 		84DC28172AD4696F00D0E165 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC28162AD4696F00D0E165 /* Constants.swift */; };
 		84DC28192AD4866900D0E165 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC28182AD4866900D0E165 /* AuthViewController.swift */; };
+		84DC281C2AD488A400D0E165 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC281B2AD488A400D0E165 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		845DACA62A9FC813000688D8 /* ImagesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListCell.swift; sourceTree = "<group>"; };
 		84DC28162AD4696F00D0E165 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		84DC28182AD4866900D0E165 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		84DC281B2AD488A400D0E165 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				84DC28182AD4866900D0E165 /* AuthViewController.swift */,
+				84DC281B2AD488A400D0E165 /* WebViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				84DC28192AD4866900D0E165 /* AuthViewController.swift in Sources */,
 				84DC28172AD4696F00D0E165 /* Constants.swift in Sources */,
 				843925CF2AB252F400AF793F /* SingleImageViewController.swift in Sources */,
+				84DC281C2AD488A400D0E165 /* WebViewController.swift in Sources */,
 				844C81C02A9BB7F200E1F1F2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
