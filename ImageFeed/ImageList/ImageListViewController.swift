@@ -27,11 +27,10 @@ final class ImageListViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == ShowSingleImageSegueIdentifier {
-            let viewController = segue.destination as! SingleImageViewController
+            let viewController = segue.destination as? SingleImageViewController
             let indexPath = sender as! IndexPath
             let image = UIImage(named: photosName[indexPath.row])
-            // _ = viewController.view
-            viewController.image = image
+            viewController?.image = image
         } else {
             super.prepare(for: segue, sender: sender)
         }
@@ -66,8 +65,6 @@ extension ImageListViewController: UITableViewDataSource {
         let isLiked = indexPath.row % 2 == 0
         let likeImage = isLiked ? UIImage(named: "Like_Button_Active") : UIImage(named: "Like_Button_No_Active")
         cell.likeButton.setImage(likeImage, for: .normal)
-        
-        // cell.configureGradient()
     }
 }
 
