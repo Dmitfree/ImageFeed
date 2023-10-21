@@ -42,11 +42,11 @@ extension SplashViewController {
                 let viewController = navigationController.viewControllers[0] as? AuthViewController
             else { fatalError("Failed to prepare for \(ShowAutenticationScreenSegueIdentifier)") }
             viewController.delegate = self
-            } else {
-                super.prepare(for: segue, sender: sender)
-            }
+        } else {
+            super.prepare(for: segue, sender: sender)
         }
     }
+}
 
 extension SplashViewController: AuthViewControllerDelegate {
     func authViewController(_ vc: AuthViewController, didAuthenticateWithCode code: String) {
