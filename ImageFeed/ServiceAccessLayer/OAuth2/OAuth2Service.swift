@@ -41,9 +41,9 @@ final class OAuth2Service {
     private func makeRequest(code: String) -> URLRequest {
         makeRequest(
             path: "/oauth/token"
-            + "?client_id=\(AccessKey)"
-            + "&&client_secret=\(SecretKey)"
-            + "&&redirect_url=\(RedirectURI)"
+            + "?client_id=\(Constants.accessKey)"
+            + "&&client_secret=\(Constants.secretKey)"
+            + "&&redirect_uri=\(Constants.redirectURI)"
             + "&&code=\(code)"
             + "&&grant_type=authorization_code",
             httpMethod: "Post",
@@ -58,7 +58,7 @@ final class OAuth2Service {
         let createdAt: Int
         
         enum CodingKeys: String, CodingKey {
-            case accessToken = "acess_token"
+            case accessToken = "acсess_token"
             case tokenType = "token_type"
             case scope
             case createdAt = "created_at"
@@ -113,7 +113,7 @@ extension OAuth2Service {
     private func makeRequest(
         path: String,
         httpMethod: String,
-        baseURL: URL = DefaultBaseURL
+        baseURL: URL = Constants.defaultBaseURL
     ) -> URLRequest {
         var request = URLRequest(url: URL(string: path, relativeTo: baseURL)!)
         request.httpMethod = httpMethod

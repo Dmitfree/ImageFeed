@@ -3,7 +3,7 @@
 import UIKit
 
 final class SplashViewController: UIViewController {
-    private let ShowAutenticationScreenSegueIdentifier = "ShowAutentificationScreen"
+    private let showAutenticationScreenSegueIdentifier = "ShowAutentificationScreen"
     
     private let oauth2Service = OAuth2Service()
     private let oauth2TokenStorage = OAuth2TokenStorage()
@@ -14,7 +14,7 @@ final class SplashViewController: UIViewController {
         if let token = oauth2TokenStorage.token {
             switchToTabBarController()
         } else {
-            performSegue(withIdentifier: ShowAutenticationScreenSegueIdentifier, sender: nil)
+            performSegue(withIdentifier: showAutenticationScreenSegueIdentifier, sender: nil)
         }
     }
     
@@ -27,7 +27,7 @@ final class SplashViewController: UIViewController {
     }
     
     private func switchToTabBarController() {
-        guard let window = UIApplication.shared.windows.first else { fatalError("Invalid Configuration")}
+        guard let window = UIApplication.shared.windows.first else { return /*fatalError("Invalid Configuration")*/}
         let tabBarController = UIStoryboard(name: "Main", bundle: .main)
             .instantiateViewController(withIdentifier: "TabBarViewController")
         window.rootViewController = tabBarController
@@ -36,11 +36,11 @@ final class SplashViewController: UIViewController {
 
 extension SplashViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == ShowAutenticationScreenSegueIdentifier {
+        if segue.identifier == showAutenticationScreenSegueIdentifier {
             guard
                 let navigationController = segue.destination as? UINavigationController,
                 let viewController = navigationController.viewControllers[0] as? AuthViewController
-            else { fatalError("Failed to prepare for \(ShowAutenticationScreenSegueIdentifier)") }
+            else { return /*fatalError("Failed to prepare for \(showAutenticationScreenSegueIdentifier)")*/ }
             viewController.delegate = self
         } else {
             super.prepare(for: segue, sender: sender)

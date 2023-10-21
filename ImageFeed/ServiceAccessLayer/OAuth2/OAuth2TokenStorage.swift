@@ -5,6 +5,9 @@ import Foundation
 final class OAuth2TokenStorage {
     private let tokenKey = "token"
     
+    static let shared = OAuth2TokenStorage()
+    init() {}
+    
     var token: String? {
         get {
             UserDefaults.standard.string(forKey: tokenKey)
