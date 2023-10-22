@@ -58,7 +58,7 @@ final class OAuth2Service {
         let createdAt: Int
         
         enum CodingKeys: String, CodingKey {
-            case accessToken = "acсess_token"
+            case accessToken = "access_token"
             case tokenType = "token_type"
             case scope
             case createdAt = "created_at"

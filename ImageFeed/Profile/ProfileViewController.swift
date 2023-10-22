@@ -80,6 +80,7 @@ class ProfileViewController: UIViewController {
     }
     
     @objc private func didTapLogoutButton() {
+        dismiss(animated: true)
     }
 }
 
