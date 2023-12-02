@@ -18,6 +18,7 @@
 		844C81C72A9BB7F300E1F1F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844C81C62A9BB7F300E1F1F2 /* Assets.xcassets */; };
 		844C81CA2A9BB7F300E1F1F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844C81C82A9BB7F300E1F1F2 /* LaunchScreen.storyboard */; };
 		845DACA72A9FC813000688D8 /* ImagesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845DACA62A9FC813000688D8 /* ImagesListCell.swift */; };
+		848D6B7E2B150446007D77B3 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D6B7D2B150446007D77B3 /* ProfileService.swift */; };
 		84D72FF82ADDAD6800CB57AD /* OAuth2Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D72FF72ADDAD6800CB57AD /* OAuth2Service.swift */; };
 		84D72FFA2ADDAD8500CB57AD /* OAuth2TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D72FF92ADDAD8500CB57AD /* OAuth2TokenStorage.swift */; };
 		84D72FFC2ADDB43700CB57AD /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D72FFB2ADDB43700CB57AD /* SplashViewController.swift */; };
@@ -39,6 +40,7 @@
 		844C81C92A9BB7F300E1F1F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		844C81CB2A9BB7F300E1F1F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		845DACA62A9FC813000688D8 /* ImagesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListCell.swift; sourceTree = "<group>"; };
+		848D6B7D2B150446007D77B3 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		84D72FF72ADDAD6800CB57AD /* OAuth2Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2Service.swift; sourceTree = "<group>"; };
 		84D72FF92ADDAD8500CB57AD /* OAuth2TokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2TokenStorage.swift; sourceTree = "<group>"; };
 		84D72FFB2ADDB43700CB57AD /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				841027202AAA50590031632F /* ProfileViewController.swift */,
+				848D6B7D2B150446007D77B3 /* ProfileService.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				84DC281C2AD488A400D0E165 /* WebViewController.swift in Sources */,
 				84D72FF82ADDAD6800CB57AD /* OAuth2Service.swift in Sources */,
 				844C81C02A9BB7F200E1F1F2 /* SceneDelegate.swift in Sources */,
+				848D6B7E2B150446007D77B3 /* ProfileService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
