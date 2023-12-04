@@ -7,6 +7,7 @@ class ProfileViewController: UIViewController {
     private let nameLabel = UILabel()
     private let loginNameLabel = UILabel()
     private let descriptionLabel = UILabel()
+    private let profileService = ProfileService.shared
     private let logoutButton = UIButton.systemButton(with: UIImage(named: "logout_button")!,
                                                      target: ProfileViewController.self,
                                                      action: #selector(didTapLogoutButton))
@@ -15,6 +16,14 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        updateProfileDetails(profile: profileService.profile)
+    }
+    
+    func updateProfileDetails(profile: Profile?) {
+        guard let profile = profile else { return }
+        self.nameLabel.text = profile.name
+        self.loginNameLabel.text = profile.loginName
+        self.descriptionLabel.text = profile.bio
     }
     
     private func setupUI() {
